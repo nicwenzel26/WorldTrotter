@@ -36,7 +36,12 @@ class ViewController: UIViewController {
         firstView.addSubview(secondView)
          */
         
-        
+        // Adding a sublayer to the view which is a gradient between the yellow and blue collors. 
+        let gradient = CAGradientLayer()
+        gradient.frame = self.view.bounds
+        gradient.colors = [UIColor.yellow.cgColor, UIColor.blue.cgColor]
+        gradient.opacity = 0.5
+        view.layer.addSublayer(gradient)
     }
 
 
