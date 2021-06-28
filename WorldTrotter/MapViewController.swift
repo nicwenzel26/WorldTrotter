@@ -48,5 +48,28 @@ class MapViewController: UIViewController {
         topConstrait.isActive = true
         leadingConstraint.isActive = true
         traillingConstraint.isActive = true
+        
+        
+        // Adding functionality to the selection of the segmentedControl Bar
+        
+        segmentedControl.addTarget(self, action: #selector(mapTypeChanged(_:)), for: .valueChanged)
+    }
+    
+    // Function method for selection of segmentedControl
+    @objc func mapTypeChanged(_ segControl: UISegmentedControl) {
+        switch segControl.selectedSegmentIndex {
+        case 0:
+            mapView.mapType = .standard
+            break
+        case 1:
+            mapView.mapType = .hybrid
+            break
+        case 2:
+            mapView.mapType = .satellite
+            break
+        default:
+            print("ERROR SELECTING MAP TYPE")
+            break
+        }
     }
 }
