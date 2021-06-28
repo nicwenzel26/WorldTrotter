@@ -25,5 +25,28 @@ class MapViewController: UIViewController {
         
         // Setting the view of the view controller to the view
         view = mapView
+        
+        let segmentedControl = UISegmentedControl(items: ["Standard", "Hybrid", "Satellite"])
+        
+        segmentedControl.backgroundColor = UIColor.systemBackground
+        
+        segmentedControl.selectedSegmentIndex = 0
+        
+        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(segmentedControl)
+        
+        // Adding constraints
+        
+        let topConstrait = segmentedControl.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8)
+        let margin = view.layoutMarginsGuide
+        
+        let leadingConstraint = segmentedControl.leadingAnchor.constraint(equalTo: margin.leadingAnchor)
+        let traillingConstraint = segmentedControl.trailingAnchor.constraint(equalTo: margin.trailingAnchor)
+        
+        // Activating Constraints
+        topConstrait.isActive = true
+        leadingConstraint.isActive = true
+        traillingConstraint.isActive = true
     }
 }
