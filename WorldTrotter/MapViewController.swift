@@ -51,8 +51,35 @@ class MapViewController: UIViewController {
         
         
         // Adding functionality to the selection of the segmentedControl Bar
-        
         segmentedControl.addTarget(self, action: #selector(mapTypeChanged(_:)), for: .valueChanged)
+        
+        
+        // Creating the text label for the interest options switch
+        let interestLabel = UILabel()
+        interestLabel.text = "Points of Interest"
+        interestLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(interestLabel)
+        // Defining the constraits for the text label
+        let interestTop = interestLabel.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 20)
+        let interestLeading = interestLabel.leadingAnchor.constraint(equalTo: margin.leadingAnchor)
+        // Activiating the constraints for the UIText
+        interestTop.isActive = true
+        interestLeading.isActive = true
+        
+        
+        // Creating the Switch
+        let interestSwitch = UISwitch()
+        interestSwitch.translatesAutoresizingMaskIntoConstraints = false
+        interestSwitch.isOn = true
+        view.addSubview(interestSwitch)
+        // Defining the constraints for the switch
+        let switchTop = interestSwitch.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 20)
+        let switchLeading = interestSwitch.leadingAnchor.constraint(equalTo: interestLabel.trailingAnchor, constant: 8)
+        // Activating the constraints
+        switchTop.isActive = true
+        switchLeading.isActive = true
+        
+        interestSwitch.addTarget(self, action: #selector(interestToggled(_:)), for: .valueChanged)
     }
     
     // Function method for selection of segmentedControl
@@ -70,6 +97,16 @@ class MapViewController: UIViewController {
         default:
             print("ERROR SELECTING MAP TYPE")
             break
+        }
+    }
+    
+    @objc func interestToggled(_ UIswitch: UISwitch) {
+        switch UIswitch.isOn {
+        case true:
+            mapView.pointOfInterestFilter = .includingAll
+            break
+        case false:
+            mapView.pointOfInterestFilter = .excludingAll
         }
     }
 }
