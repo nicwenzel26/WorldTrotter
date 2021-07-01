@@ -44,6 +44,9 @@
                                 <color key="textColor" red="0.88235294119999996" green="0.34509803919999998" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="70"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="fahrenheitFieldEditingCHanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="Yz4-5I-pF9"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -68,6 +71,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Convert" image="ConvertIcon" id="Pau-v6-0Sa"/>
+                    <connections>
+                        <outlet property="celciusLabel" destination="V6t-Ch-uqW" id="K8e-AB-BnV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
