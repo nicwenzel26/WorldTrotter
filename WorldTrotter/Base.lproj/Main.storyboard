@@ -73,6 +73,7 @@
                     <tabBarItem key="tabBarItem" title="Convert" image="ConvertIcon" id="Pau-v6-0Sa"/>
                     <connections>
                         <outlet property="celciusLabel" destination="V6t-Ch-uqW" id="K8e-AB-BnV"/>
+                        <outlet property="textField" destination="p2x-y9-kn3" id="SbA-lw-wG7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

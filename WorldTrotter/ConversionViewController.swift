@@ -11,6 +11,7 @@ class ConversionViewController: UIViewController {
     
     // Outlet definitions
     @IBOutlet var celciusLabel: UILabel!
+    @IBOutlet var textField: UITextField!
     
     
     override func viewDidLoad() {
@@ -34,6 +35,13 @@ class ConversionViewController: UIViewController {
         else {
             celciusLabel.text = "???"
         }
+    }
+    
+    
+    // Function for dismissing the keyboard
+    @IBAction func dismissKeyboard(_ sender:UITapGestureRecognizer) {
+        // Connecting the outlet to resigning the first responder
+        textField.resignFirstResponder()
     }
     
 }
