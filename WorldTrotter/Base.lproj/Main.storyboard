@@ -51,6 +51,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.96078431372549022" green="0.95686274509803915" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="zy3-WO-XDy" firstAttribute="top" secondItem="p2x-y9-kn3" secondAttribute="bottom" constant="8" id="7ka-2k-mte"/>
                             <constraint firstItem="p2x-y9-kn3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="BOq-xa-0De"/>
@@ -69,6 +70,9 @@
                             <constraint firstItem="V6t-Ch-uqW" firstAttribute="centerX" secondItem="zy3-WO-XDy" secondAttribute="centerX" id="xXn-4C-dfT"/>
                             <constraint firstItem="V6t-Ch-uqW" firstAttribute="centerX" secondItem="zy3-WO-XDy" secondAttribute="centerX" id="y3z-Gt-OIk"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="wyT-2P-75e" appends="YES" id="t1F-Sr-ALL"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Convert" image="ConvertIcon" id="Pau-v6-0Sa"/>
                     <connections>
@@ -77,6 +81,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="wyT-2P-75e">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="BYZ-38-t0r" id="MCB-DI-Kgl"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="116.51785714285714"/>
         </scene>
@@ -98,55 +107,74 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o31-Gc-oOd">
-                                <rect key="frame" x="191.5" y="52" width="31.5" height="84"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
-                                <color key="textColor" red="0.052566565573215485" green="0.088834024965763092" blue="0.88910633325576782" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pir-6H-aYr">
-                                <rect key="frame" x="177.5" y="144" width="59" height="38.5"/>
+                                <rect key="frame" x="177.5" y="145.5" width="59" height="38.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <color key="textColor" red="0.052566565573215485" green="0.088834024965763092" blue="0.88910633325576782" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is Really" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2vD-ra-bdG">
-                                <rect key="frame" x="150.5" y="190.5" width="113" height="38.5"/>
+                                <rect key="frame" x="150.5" y="192" width="113" height="38.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2.54" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qtP-Gb-9z1">
-                                <rect key="frame" x="137.5" y="237" width="139.5" height="84"/>
+                                <rect key="frame" x="137.5" y="238.5" width="139.5" height="84"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="70"/>
                                 <color key="textColor" red="0.052566565573215485" green="0.088834024965763092" blue="0.88910633325576782" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Centimeters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uzJ-hY-bHc">
-                                <rect key="frame" x="123" y="329" width="168.5" height="38.5"/>
+                                <rect key="frame" x="123" y="330.5" width="168.5" height="38.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <color key="textColor" red="0.052566565573215485" green="0.088834024965763092" blue="0.88910633325576782" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Value" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JeO-xq-6LD">
+                                <rect key="frame" x="126" y="52" width="162" height="85.5"/>
+                                <color key="textColor" red="0.052566565573215485" green="0.088834024965763092" blue="0.88910633325576782" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="inchesFeildChanged:" destination="vAQ-Qa-pfS" eventType="editingChanged" id="8d5-a5-9Lh"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jx8-s1-xeb"/>
                         <color key="backgroundColor" red="0.96078431369999995" green="0.95686274510000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="o31-Gc-oOd" firstAttribute="centerX" secondItem="iWG-nz-XLj" secondAttribute="centerX" id="2LB-6Y-Wrz"/>
-                            <constraint firstItem="2vD-ra-bdG" firstAttribute="centerX" secondItem="o31-Gc-oOd" secondAttribute="centerX" id="8Iw-AI-fXy"/>
-                            <constraint firstItem="Pir-6H-aYr" firstAttribute="top" secondItem="o31-Gc-oOd" secondAttribute="bottom" constant="8" id="C7x-EB-fri"/>
+                            <constraint firstItem="uzJ-hY-bHc" firstAttribute="centerX" secondItem="JeO-xq-6LD" secondAttribute="centerX" id="Dg4-aR-aaO"/>
                             <constraint firstItem="uzJ-hY-bHc" firstAttribute="top" secondItem="qtP-Gb-9z1" secondAttribute="bottom" constant="8" id="Jnf-V9-XAw"/>
+                            <constraint firstItem="qtP-Gb-9z1" firstAttribute="top" secondItem="2vD-ra-bdG" secondAttribute="bottom" constant="8" id="PcQ-7F-V5l"/>
+                            <constraint firstItem="JeO-xq-6LD" firstAttribute="centerX" secondItem="iWG-nz-XLj" secondAttribute="centerX" id="Rti-mX-jHI"/>
+                            <constraint firstItem="Pir-6H-aYr" firstAttribute="centerX" secondItem="JeO-xq-6LD" secondAttribute="centerX" id="S8N-48-Sjc"/>
+                            <constraint firstItem="Pir-6H-aYr" firstAttribute="top" secondItem="JeO-xq-6LD" secondAttribute="bottom" constant="8" id="V03-H6-Hvv"/>
                             <constraint firstItem="2vD-ra-bdG" firstAttribute="top" secondItem="Pir-6H-aYr" secondAttribute="bottom" constant="8" id="XVc-A2-BYL"/>
-                            <constraint firstItem="Pir-6H-aYr" firstAttribute="centerX" secondItem="o31-Gc-oOd" secondAttribute="centerX" id="ZZp-LN-S7g"/>
                             <constraint firstItem="qtP-Gb-9z1" firstAttribute="top" secondItem="2vD-ra-bdG" secondAttribute="bottom" constant="8" id="aVi-X2-z1g"/>
-                            <constraint firstItem="qtP-Gb-9z1" firstAttribute="centerX" secondItem="o31-Gc-oOd" secondAttribute="centerX" id="hAt-5N-oxP"/>
-                            <constraint firstItem="o31-Gc-oOd" firstAttribute="top" secondItem="jx8-s1-xeb" secondAttribute="top" constant="8" id="pt6-93-216"/>
-                            <constraint firstItem="uzJ-hY-bHc" firstAttribute="centerX" secondItem="o31-Gc-oOd" secondAttribute="centerX" id="yDr-fb-iDh"/>
+                            <constraint firstItem="2vD-ra-bdG" firstAttribute="centerX" secondItem="JeO-xq-6LD" secondAttribute="centerX" id="bY8-mb-i3j"/>
+                            <constraint firstItem="uzJ-hY-bHc" firstAttribute="top" secondItem="qtP-Gb-9z1" secondAttribute="bottom" constant="8" id="gGg-dB-1iP"/>
+                            <constraint firstItem="qtP-Gb-9z1" firstAttribute="centerX" secondItem="JeO-xq-6LD" secondAttribute="centerX" id="i2p-yy-XxV"/>
+                            <constraint firstItem="JeO-xq-6LD" firstAttribute="top" secondItem="jx8-s1-xeb" secondAttribute="top" constant="8" id="lSP-Yg-xFf"/>
+                            <constraint firstItem="2vD-ra-bdG" firstAttribute="top" secondItem="Pir-6H-aYr" secondAttribute="bottom" constant="8" id="oWb-EA-44U"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Mvn-ki-3x2" appends="YES" id="31b-4M-h4t"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Length" image="ruler" catalog="system" id="Gv3-Zh-8UJ"/>
+                    <connections>
+                        <outlet property="centimetersLabel" destination="qtP-Gb-9z1" id="2Bd-ib-2Ir"/>
+                        <outlet property="inchesTextField" destination="JeO-xq-6LD" id="zXY-iB-Y2f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZaD-6D-IRW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Mvn-ki-3x2">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="vAQ-Qa-pfS" id="RVX-KT-bPA"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2601" y="108"/>
         </scene>
